@@ -1,5 +1,5 @@
 
-This project is an E-Commerce Order Management System.  
+# This project is an E-Commerce Order Management System.  
 It includes database schema creation, ER diagram, and API documentation using swagger.
 
 The system manages customers, sellers, products,category, orders,orderitems, payments, refunds, reviews,, and cart operations.
@@ -10,7 +10,7 @@ Swagger YAML
 GitHub
 
 
-The database includes the following tables:
+# The database includes the following tables:
 
 1. Customer
 2. Seller
@@ -31,9 +31,10 @@ my table contains -
 - Relationships One-to-Many, one to one, many to one, many to many
 
 # An env file is created to store all sensitive information 
+.env
 
 
-## ER Diagram
+# ER Diagram
 
 The ER diagram is included in this repository that is done using mysql workbench.
 
@@ -49,17 +50,17 @@ It includes:
 - DELETE
 
 Endpoints are defined for:
-- Customer
-- Seller
-- Product
-- Orders
-- Cart
-- Payment
-- Refund
-- Review
-
-
----
+1. Customer
+2. Seller
+3. category
+4. Product
+5. cart
+6. orderitems
+7. orders
+8. payment
+9. address
+10. refund
+11. review
 
 # How to Run this Project
 
