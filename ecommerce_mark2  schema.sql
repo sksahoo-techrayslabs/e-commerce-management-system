@@ -2,7 +2,7 @@ create database ecommerce_mark2;
 use ecommerce_mark2;
 
 
--- -------customer table------------ 
+-- ----1---customer------------ 
 
 create table customer (
 customerid int primary key auto_increment,
@@ -15,14 +15,14 @@ phone varchar(13) not null unique,
 age int
 );
 
--- ----------seller------------
+-- -----2-----seller------------
 
 create table seller(
 sellerid int primary key auto_increment not null,
 name varchar(50) not null,
 phone varchar(13) not null
 );
--- --------- category-----------
+-- ---3------ category-----------
 
 create table category(
  categoryid int primary key auto_increment not null,
@@ -30,7 +30,7 @@ create table category(
  details varchar(500)
  );
  
- -- -------------product------------
+ -- -4-----------product------------
  
 create table product (
 sellerid int not null,
@@ -45,7 +45,7 @@ foreign key(categoryid) references category(categoryid) on delete cascade on upd
 );
 
  
--- -------------cart--------------
+-- -----5--------cart--------------
 
 create table cart(
 customerid int,
@@ -59,7 +59,7 @@ foreign key (productid) references product(productid) on delete cascade on updat
 );
 
 
--- ---------------orderitem---------------
+-- -----6----------orderitem---------------
 create table orderitem(
 orderitemid int primary key auto_increment,
 -- orderid int,
@@ -71,7 +71,7 @@ foreign key (productid) references product(productid) on delete cascade on updat
 );
 
 
--- ---------------orders--------------------------
+-- -------7--------orders--------------------------
 
 create table orders(
 orderid int primary key auto_increment ,
@@ -88,7 +88,7 @@ foreign key(customerid) references customer(customerid) on delete cascade on upd
 foreign key(orderitemid) references orderitem(orderitemid) on delete cascade on update cascade
 );
 
--- ---------payment----------
+-- --8-------payment----------
 
 create table payment(
 orderid int,
@@ -100,7 +100,7 @@ foreign key (orderid) references orders(orderid) on delete cascade on update cas
 foreign key (customerid) references customer(customerid) on delete cascade on update cascade
 );
 
--- ---------------address-------------
+-- -----9----------address-------------
 
 create table address(
 addressid int primary key auto_increment,
@@ -112,7 +112,7 @@ pincode varchar(15) not null,
 foreign key(customerid) references customer(customerid) on delete cascade on update cascade
 );
 
--- ------------refund--------------- 
+-- -----10-------refund--------------- 
 
 create table refund( 
 refundid int primary key auto_increment,
@@ -130,7 +130,7 @@ foreign key (productid) references product(productid) on delete cascade on updat
 foreign key (customerid) references customer(customerid) on delete cascade on update cascade
 );
 
--- ------------review----------
+-- ---11---------review----------
 
 create table review(
 reviewid int primary key auto_increment,
